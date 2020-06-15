@@ -1,0 +1,4 @@
+unique_id,timestamp,y_pred,y_proba,country,target_date,model_version,runtime
+90870882-e826-4fdb-870f-6dda2ec5c961,1592224554,[15000],None,ERIE,2018-01-05,0.1,00:00:02
+d9308843-f2b2-4b5a-956e-2a5f5d4acd2b,1592224554,[15000],None,ERIE,2018-01-05,0.1,00:00:02
+c14b778e-d89f-4a11-ba9d-b69c1b5585c5,1592224643,[178528.60817503],None,all,2018-01-05,0.1,000:00:32

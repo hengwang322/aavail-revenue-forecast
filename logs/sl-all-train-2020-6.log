@@ -1,0 +1,4 @@
+unique_id,timestamp,dt_range,eval_test,model_version,model_note,runtime
+ae83d947-6efe-469e-bce3-4324af99b153,1592224292,"('2017-11-29', '2019-05-31')",{'rmse': 16518.0},0.1,supervised learing model for time-series,000:00:24
+fe1f243d-a171-4518-a226-79ab58ace6e0,1592225084,"('2017-11-29', '2019-05-31')",{'rmse': 18102.0},0.1,supervised learing model for time-series,000:00:06
+5409ac36-801b-4648-8ceb-ed0068260ad7,1592226346,"('2017-11-29', '2019-10-31')",{'rmse': 19471.0},0.2,supervised learing model for time-series,000:00:27

@@ -1,0 +1,3 @@
+unique_id,timestamp,dt_range,eval_test,model_version,model_note,runtime
+42fe4858-47f1-495f-9913-3e66080bfcac,1592224554,"('2018-01-01', '2018-02-01')",{'rmse': 0.5},0.1,test model,00:00:01
+efd1b585-ffea-419e-b691-cb01b82f0c09,1592224554,"('2018-01-01', '2018-02-01')",{'rmse': 0.5},0.1,test model,00:00:01

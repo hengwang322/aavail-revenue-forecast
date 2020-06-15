@@ -1,0 +1,48 @@
+<!-- extends from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+</head>
+
+<body>
+    <br><br>
+    <h1 align="center">Model Performance</h1>
+    <p align="center">Choose a country below and plot out the actual revenue vs the prediction</p>
+
+    <div class="login">
+        <form action="{{ url_for('dashboard')}}"method="post">
+            <center><select id="country" name="country">
+              <option value="all">All</option>
+              <option value="eire">EIRE</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="hong_kong">Hong Kong</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="norway">Norway</option>
+              <option value="portugal">Portugal</option>
+              <option value="singapore">Singapore</option>
+              <option value="spain">Spain</option>
+              <option value="united_kingdom">United Kingdom</option>
+            </select></center><br>
+            <center><button type="submit" class="btn btn-primary">Plot it!</button></center>
+        </form>
+    </div>
+    <div id="chart" class="chart">
+    </div>
+
+</body>
+
+
+    <script type="text/javascript">
+
+        var graphs = {{graphJSON | safe}};
+
+        Plotly.plot('chart',graphs,{});
+
+    </script>
+
+{% endblock %}

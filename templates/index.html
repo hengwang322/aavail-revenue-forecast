@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- <h1 class="mt-5">Welcome to my Web App</h1> -->
+
+<div class="login">
+	<br><br>
+	<h1 align="center">Revenue Forecasting</h1>
+	<p align="center">Choose a country below and a target date to predict the revenue</p>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predictgui')}}"method="post">
+        <center><select id="country" name="country">
+          <option value="all">All</option>
+          <option value="eire">EIRE</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option>
+          <option value="hong_kong">Hong Kong</option>
+		  <option value="netherlands">Netherlands</option>
+		  <option value="norway">Norway</option>
+		  <option value="portugal">Portugal</option>
+		  <option value="singapore">Singapore</option>
+		  <option value="spain">Spain</option>
+		  <option value="united_kingdom">United Kingdom</option>
+        </select></center>
+		<center><input type="date" name="Date" value="2018-07-22" required="required" /></center>
+
+        <!-- <center><input type="text" name="year" placeholder="Year (yyyy)" required="required" /></center>
+		<center><input type="text" name="month" placeholder="Month (mm)" required="required" /></center>
+        <center><input type="text" name="day" placeholder="Day (dd)" required="required" /></center><br> -->
+		<center><button type="submit" class="btn btn-primary">Predict the total revenue for next 30 days!</button></center>
+
+    </form>
+
+   <br>
+   <br>
+   <center>{{ prediction_text }}</center>
+
+</div>
+
+{% endblock %}
