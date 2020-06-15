@@ -10,7 +10,8 @@ from sklearn.covariance import EllipticEnvelope
 from scipy.stats import wasserstein_distance
 from sklearn.metrics import mean_squared_error as mse
 from sklearn.metrics import mean_absolute_error as mae
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+# import plotly.graph_objects as go
 with open('__version__','r+') as f:
     MODEL_VERSION = f.read()
     f.close
@@ -48,14 +49,19 @@ def plot_ts(country):
     mae_ = round(mae(y_true,y_pred),2)
     mape_ = round(mape(y_true,y_pred),2)
 
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=all_dates, y=y_true, name='Actual Revenue'))
-    fig.add_trace(go.Scatter(x=all_dates, y=y_pred, name='Predicted Revenue'))
-
-    fig.update_layout(title=f"{country.replace('_',' ').title()}: RMSE:{rmse_}, MAE:{mae_}, MAPE:{mape_}%",
-                      yaxis_title="Revenue")
-
-    fig.show()
+    # fig = go.Figure()
+    # fig.add_trace(go.Scatter(x=all_dates, y=y_true, name='Actual Revenue'))
+    # fig.add_trace(go.Scatter(x=all_dates, y=y_pred, name='Predicted Revenue'))
+    #
+    # fig.update_layout(title=f"{country.replace('_',' ').title()}: RMSE:{rmse_}, MAE:{mae_}, MAPE:{mape_}%",
+    #                   yaxis_title="Revenue")
+    # fig.show()
+    plt.figure(figsize=(12,4))
+    plt.title(f"Model for {country.replace('_',' ').title()}: RMSE:{rmse_}, MAE:{mae_}, MAPE:{mape_}%")
+    plt.plot(pd.to_datetime(all_dates),y_true,label='Actual Revenue')
+    plt.plot(pd.to_datetime(all_dates),y_pred,label='Predict Revenue')
+    plt.legend()
+    plt.show()
 
 def show_importance(country):
     '''
